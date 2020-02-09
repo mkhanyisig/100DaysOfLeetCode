@@ -1,2 +1,2 @@
 # 100DaysOfLeetCode
-Algorithms Technical interview practice
+Leetcode Algorithms Technical interview practice
