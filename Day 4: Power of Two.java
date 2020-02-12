@@ -2,7 +2,7 @@
      Day 4: Leetcode 231. Power of Two
      Time Spent: 30 mins
      
-     Personal notes: Eliminate cases of factors and then get down to remainders
+     Personal notes: Eliminate cases of odd factors and then get down to remainders
 */
 
 class Solution {
