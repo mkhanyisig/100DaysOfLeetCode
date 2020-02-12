@@ -2,7 +2,7 @@
      Day 4: Leetcode 326. Power of Three
      Time Spent: 4 mins
      
-     Personal notes: Eliminate cases of factors and then get down to remainders
+     Personal notes: After power of two, hacked this solution. Eliminate cases of factors and then get down to remainders
 */
 
 class Solution {
