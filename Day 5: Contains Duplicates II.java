@@ -2,12 +2,8 @@
      Day 4: Leetcode 217. Contains Duplicate
      Time Spent: 77 mins
      
-     Personal notes: Made deadly mistake of misnaming variable and that delayed my debugging, took long to catch
+     Personal notes: Made deadly mistake of misnaming variable and that delayed my debugging, took very long to catch and fix
 */
-
-
-
-
 
 class Solution {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
