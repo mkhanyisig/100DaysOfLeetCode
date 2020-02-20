@@ -17,13 +17,13 @@ public class Solution extends VersionControl {
         int l=1;
         int i=n;
         // binary search
-        while(l<i){
+         while(l<i){
             int mid=l+(i-l)/2;
-            if(isBadVersion(mid)){
+            if(isBadVersion(mid)){ // right side BS
                 // do nothing
                 i=mid;
             }
-            else{
+            else{ // left side BS
                 l=mid+1;
             }
             
