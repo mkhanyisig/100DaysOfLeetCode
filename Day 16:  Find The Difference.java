@@ -1,8 +1,8 @@
 /*
      Day 16: Leetcode 389. Find the Difference
-     Time Spent: 20 mins
+     Time Spent: 50 mins
      
-     Personal notes: hash map data structure and how it works
+     Personal notes: hash map data structure and how it works. Most of the time spent mostly debugging
 */
 
 
