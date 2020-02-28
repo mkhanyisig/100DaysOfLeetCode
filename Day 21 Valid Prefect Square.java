@@ -2,7 +2,7 @@
      Day 21: Leetcode 367. Valid Perfect Square
      Time Spent: 44 mins
      
-     Personal notes: Didn't use the Math.sqrt method and so more creativity required here
+     Personal notes: Binary Search modification used. Didn't use the Math.sqrt method and so more creativity required here
 */
 
 
