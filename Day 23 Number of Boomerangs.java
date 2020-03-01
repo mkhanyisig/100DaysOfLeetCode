@@ -12,6 +12,9 @@ class Solution {
     } 
     
     public int nPr(int n, int r) { 
+        if(n<r){// just for this case
+            return n*(n-1);
+        }
         return fact(n) / (fact(n - r)); 
     } 
   
