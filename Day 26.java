@@ -6,10 +6,6 @@
      
 */
 
-
-
-
-
 class Solution {
     
     private TreeNode helper(int[] nums, int low, int high) {
