@@ -86,4 +86,70 @@ class Solution {
         
         return num;
     }
+    // revised initial method
+     public int findContentChildrenA(int[] g, int[] s) {
+        // greedy algorithm
+        int num=0;
+        int chi =0; 
+        int cook=0;
+        
+        Arrays.sort(g); 
+        Arrays.sort(s); 
+        
+        System.out.println(g.length+"    "+s.length);
+        
+        if(g.length==0 || s.length==0){
+            return num;
+        }
+        
+        // build cookie queue
+        Queue<Integer> q = new LinkedList<>();
+        for(int i=0;i<s.length;i++){
+                q.add(s[i]);
+        }
+        int child_idx=0;
+        while(q.size()>0){
+            // assign cookies to each child
+            if(q.peek()>g[child_idx]){
+            	child_idx+=1;
+            	q.poll();
+            	num+=1;
+            }
+        }
+        return num;
+    }
+    
+    
+    // modified soln #3 from earlier
+    public int findContentChildren(int[] g, int[] s) {
+        // greedy algorithm
+        int num=0;
+        int chi =0; 
+        int cook=0;
+        
+        Arrays.sort(g); 
+        Arrays.sort(s); 
+        
+        System.out.println(g.length+"    "+s.length);
+        
+        if(g.length==0 || s.length==0){
+            return num;
+        }
+        
+        // build cookie queue
+        Queue<Integer> q = new LinkedList<>();
+        for(int i=0;i<s.length;i++){
+                q.add(s[i]);
+        }
+        int child_idx=0;
+        while(q.size()>0 && child_idx<=g.length-1){
+            // assign cookies to each child
+            if(q.peek()>=g[child_idx]){
+            	child_idx+=1;
+            	num+=1;
+            }
+            q.poll();
+        }
+        return num;
+    }
 }
