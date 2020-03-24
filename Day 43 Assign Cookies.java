@@ -11,7 +11,7 @@
 
 
 class Solution {
-    public int findContentChildren(int[] g, int[] s) {
+    public int findContentChildrenA(int[] g, int[] s) {
         // greedy algorithm
         int num=0;
         int chi =0; 
@@ -51,6 +51,39 @@ class Solution {
                 break;
             }
         }
+        return num;
+    }
+    
+    // greedy solution 2
+    public int findContentChildren(int[] g, int[] s) {
+        // greedy algorithm
+        int num=0;
+        int gp =0; 
+        int sp=0;
+        
+        Arrays.sort(g); 
+        Arrays.sort(s); 
+        
+        System.out.println(g.length+"    "+s.length);
+        
+        if(g.length==0 || s.length==0){
+            return num;
+        }
+        
+        while (gp < g.length && sp < s.length){
+                if (s[sp] >= g[gp])
+                {
+                    sp++;
+                    gp++;
+                    num++;
+                }
+                else
+                {
+                    sp++;
+                }
+            }
+        
+        
         return num;
     }
 }
