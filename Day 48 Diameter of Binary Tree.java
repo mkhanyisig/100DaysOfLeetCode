@@ -68,6 +68,12 @@ class Solution {
         
         System.out.println("lm : "+left_max+"   rm: "+right_max);
         
-        return left_max+right_max;
+        // recursively find max diameter of subtrees
+        int ld= diameterOfBinaryTree(root.left);
+        int rd= diameterOfBinaryTree(root.right);
+        
+        //System.out.println("lm : "+left_max+"   rm: "+right_max);
+        
+        return Math.max(left_max+right_max,Math.max(ld,rd));
     }
 }
