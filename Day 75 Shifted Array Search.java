@@ -21,31 +21,33 @@ class Solution {
       int pivot=0;
       while(b<shiftArr.length){
           if(shiftArr[b]<shiftArr[b-1]){
-              pivot=b;
+              pivot=b-1;
           }
           b+=1;
       }
       int start;
       int end;
-      System.out.println("gets here");
+      System.out.println("gets here :"+pivot);
       // binary search
-      if(shiftArr[pivot]<num){
+      if(shiftArr[pivot]>=num && num>shiftArr[0]){
+          start=0;
+          end=pivot;
+      }else if(shiftArr[shiftArr.length-1]>=num ){  
           start=pivot+1;
           end=shiftArr.length-1;
-      }else if(shiftArr[pivot]>num){
-          start=0;
-          end=pivot-1;
       }else{
           if(shiftArr[pivot]==num){
               return pivot;
           }
           else{
+              
               return -1;
           }
       }
       System.out.println(" start: "+start+"  end : "+end);
       System.out.println(pivot);
       int mid=0;
+      int k=0;
       while(end>=start){
           mid=start+((end-start)/2);
           if( shiftArr[mid]>num){
@@ -55,6 +57,10 @@ class Solution {
           }else{
               System.out.println("stuck");
               return mid;
+          }
+          k+=1;
+          if(k==20){
+             break;
           }
       }
       System.out.println(mid);
