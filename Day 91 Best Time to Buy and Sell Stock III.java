@@ -1,7 +1,6 @@
 /*
      Day 91: Leetcode 123. Best Time to Buy and Sell Stock III
-     Time : 23 mins
-     500 / 596 test cases passed.
+     Time : 50 mins
      
      Personal notes: Intuition on buy and sell
 */
@@ -24,6 +23,27 @@ class Solution {
             i+=1;
         }
         
+        return ss;
+    }
+    // my alernate
+    public int maxProfit(int[] p) {
+        if(p.length==0){
+            return 0;
+        }
+        
+        int fb=Integer.MAX_VALUE,sb=Integer.MAX_VALUE;
+        int fs=0,ss=0;
+        int i=0;
+        
+        while(i<p.length){
+            fb=Math.min(fb,p[i]);
+            fs=Math.max(fs,p[i]-fb);
+            sb=Math.min(sb,p[i]-fs);
+            ss=Math.max(ss,p[i]-sb);
+            i+=1;
+        }
+        
+        System.out.println(fs);
         return ss;
     }
 }
