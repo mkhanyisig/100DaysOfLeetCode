@@ -2,7 +2,7 @@
      Day 106: Leetcode  128. Longest Consecutive Sequence
      Time Spent: 90 mins 
      
-     Personal notes: 
+     Personal notes: Good intuition with Brute force but did'nt handle duplicate cases well. Should have used hashmap approach instead of trying to turn this into a graph problem
 */
 
 
