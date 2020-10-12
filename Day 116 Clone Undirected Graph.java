@@ -11,21 +11,25 @@
 
 // Method 1: recursion BFS
 public class Solution {
-    private HashMap<Integer, UndirectedGraphNode> map = new HashMap<>();
-    public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
-        return clone(node);
+    public Node cloneGraph(Node node) {
+        // Iterate nodes
+        List<Integer> nodes = new ArrayList<Integer>();
+        HashMap<Integer, Node> cloneByValue = new HashMap<>();
+        return doClone(node, cloneByValue);
     }
-
-    private UndirectedGraphNode clone(UndirectedGraphNode node) {
-        if (node == null) return null;
-        
-        if (map.containsKey(node.label)) {
-            return map.get(node.label);
-        }
-        UndirectedGraphNode clone = new UndirectedGraphNode(node.label);
-        map.put(clone.label, clone);
-        for (UndirectedGraphNode neighbor : node.neighbors) {
-            clone.neighbors.add(clone(neighbor));
+    
+    public Node doClone(Node original, HashMap<Integer, Node> cloneByValue) {
+        Node clone = null;
+        if(original != null) {
+            clone = new Node(original.val);
+            cloneByValue.put(clone.val, clone);
+            for(Node n : original.neighbors) {
+                if(cloneByValue.containsKey(n.val)) {
+                    clone.neighbors.add(cloneByValue.get(n.val));
+                } else {
+                    clone.neighbors.add(doClone(n, cloneByValue));
+                }
+            }            
         }
         return clone;
     }
